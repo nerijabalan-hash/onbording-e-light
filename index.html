@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding Version E (Light) – Sorting of Assets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popover-light">
+  <div class="app">
+
+    <!-- ===== Title Bar ===== -->
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <div class="title-bar-icon">
+          <svg viewBox="0 0 16 16" width="14" height="14"><rect x="1" y="1" width="14" height="14" rx="2" fill="#d44b27"/><text x="8" y="12" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Segoe UI">P</text></svg>
+        </div>
+        <div class="title-bar-actions">
+          <button class="title-action" title="Save">
+            <svg viewBox="0 0 16 16" width="13" height="13"><path d="M3 1h8l3 3v9a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 1v4h6V1" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="4" y="8" width="8" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </button>
+          <button class="title-action" title="Undo">
+            <svg viewBox="0 0 16 16" width="13" height="13"><path d="M3 7h7a3 3 0 010 6H8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M6 4L3 7l3 3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="title-action" title="Redo">
+            <svg viewBox="0 0 16 16" width="13" height="13"><path d="M13 7H6a3 3 0 000 6h2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M10 4l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span class="title-filename">Product Initiatives.pptx</span>
+      </div>
+      <div class="title-bar-center">
+        <svg viewBox="0 0 16 16" width="13" height="13" style="color:#888"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="11" y1="11" x2="14" y2="14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span class="title-search-text">Search</span>
+      </div>
+      <div class="title-bar-right">
+        <button class="btn-comments-top"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M2 3a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6l-3 3V11a2 2 0 01-1-1.7V3z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> Comments</button>
+        <button class="btn-present-teams"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M2 3h12v8H2z" fill="none" stroke="currentColor" stroke-width="1.2" rx="1"/><path d="M5 14h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Present in Teams</button>
+        <button class="btn-record-top">
+          <span class="record-dot"></span> Record
+        </button>
+        <button class="btn-share">Share</button>
+      </div>
+    </div>
+
+    <!-- ===== Ribbon Tabs ===== -->
+    <div class="ribbon-tabs">
+      <button class="ribbon-tab" data-ribbon="file">File</button>
+      <button class="ribbon-tab active" data-ribbon="home">Home</button>
+      <button class="ribbon-tab" data-ribbon="insert">Insert</button>
+      <button class="ribbon-tab" data-ribbon="draw">Draw</button>
+      <button class="ribbon-tab" data-ribbon="design">Design</button>
+      <button class="ribbon-tab" data-ribbon="transitions">Transitions</button>
+      <button class="ribbon-tab" data-ribbon="animations">Animations</button>
+      <button class="ribbon-tab" data-ribbon="slideshow">Slide Show</button>
+      <button class="ribbon-tab" data-ribbon="record">Record</button>
+      <button class="ribbon-tab" data-ribbon="review">Review</button>
+      <button class="ribbon-tab" data-ribbon="view">View</button>
+    </div>
+
+    <!-- ===== Ribbon Bar ===== -->
+    <div class="ribbon-bar">
+      <!-- Paste -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="6" y="2" width="12" height="4" rx="1" fill="none" stroke="#666" stroke-width="1.5"/><rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="#666" stroke-width="1.5"/></svg>
+            <span>Paste</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Clipboard</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Slides -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content ribbon-group-row">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="3" width="18" height="14" rx="2" fill="none" stroke="#666" stroke-width="1.5"/><path d="M3 20h18" stroke="#666" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Slides</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Slides</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Font group -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content ribbon-group-row">
+          <div class="ribbon-row">
+            <select class="ribbon-select font-select"><option>Calibri</option></select>
+            <select class="ribbon-select size-select"><option>24</option></select>
+          </div>
+          <div class="ribbon-row">
+            <button class="ribbon-sm-btn"><b>B</b></button>
+            <button class="ribbon-sm-btn"><i>I</i></button>
+            <button class="ribbon-sm-btn"><u>U</u></button>
+            <button class="ribbon-sm-btn">S</button>
+            <button class="ribbon-sm-btn">Aa</button>
+          </div>
+        </div>
+        <div class="ribbon-group-label">Font</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Paragraph -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content ribbon-group-row">
+          <div class="ribbon-row">
+            <button class="ribbon-sm-btn">
+              <svg viewBox="0 0 14 14" width="12" height="12"><path d="M1 2h12M1 5h8M1 8h12M1 11h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+            <button class="ribbon-sm-btn">
+              <svg viewBox="0 0 14 14" width="12" height="12"><path d="M1 2h12M3 5h8M1 8h12M3 11h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+            <button class="ribbon-sm-btn">
+              <svg viewBox="0 0 14 14" width="12" height="12"><path d="M1 2h12M4 5h8M1 8h12M4 11h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="ribbon-group-label">Paragraph</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Insert -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="#666" stroke-width="1.5"/><path d="M12 8v8M8 12h8" stroke="#666" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Insert</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Insert</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Drawing -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 20l2-6L16 4l4 4-10 10-6 2z" fill="none" stroke="#666" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span>Drawing</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Drawing</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Sensitivity -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2l8 4v6c0 5-3.5 9.7-8 11-4.5-1.3-8-6-8-11V6l8-4z" fill="none" stroke="#666" stroke-width="1.5"/></svg>
+            <span>Sensitivity</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Sensitivity</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Add-ins -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="3" width="8" height="8" rx="1" fill="none" stroke="#666" stroke-width="1.5"/><rect x="13" y="3" width="8" height="8" rx="1" fill="none" stroke="#666" stroke-width="1.5"/><rect x="3" y="13" width="8" height="8" rx="1" fill="none" stroke="#666" stroke-width="1.5"/><rect x="13" y="13" width="8" height="8" rx="1" fill="none" stroke="#666" stroke-width="1.5"/></svg>
+            <span>Add-ins</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Add-ins</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Designer -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="#666" stroke-width="1.5"/><path d="M12 3a9 9 0 010 18" fill="#ddd" stroke="#666" stroke-width="1.5"/></svg>
+            <span>Designer</span>
+          </button>
+        </div>
+        <div class="ribbon-group-label">Designer</div>
+      </div>
+      <div class="ribbon-sep"></div>
+      <!-- Content Library -->
+      <div class="ribbon-group">
+        <div class="ribbon-group-content ribbon-group-stacked">
+          <button class="ribbon-btn ribbon-btn-large">
+            <svg viewBox="0 0 24 24" width="28" height="28"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="#666" stroke-width="1.3"/><path d="M7 4V2h10v2" stroke="#666" stroke-width="1.3" fill="none"/><path d="M2 10h20M8 10v10M16 10v10" stroke="#666" stroke-width="1" stroke-dasharray="0"/></svg>
+            <span>Content<br>Library</span>
+          </button>
+          <div class="ribbon-sub-items">
+            <button class="ribbon-sub-btn">
+              <svg viewBox="0 0 14 14" width="11" height="11"><path d="M7 1v12M1 7h12" stroke="#0078d4" stroke-width="1.5" stroke-linecap="round"/></svg>
+              New Presentation
+            </button>
+            <button class="ribbon-sub-btn">
+              <svg viewBox="0 0 14 14" width="11" height="11"><circle cx="7" cy="7" r="5" fill="none" stroke="#0078d4" stroke-width="1.3"/><line x1="10.5" y1="10.5" x2="13" y2="13" stroke="#0078d4" stroke-width="1.3" stroke-linecap="round"/></svg>
+              Find Template
+            </button>
+            <button class="ribbon-sub-btn">
+              <svg viewBox="0 0 14 14" width="11" height="11"><path d="M3 2h8l2 3v7a1 1 0 01-1 1H2a1 1 0 01-1-1V3a1 1 0 011-1z" fill="none" stroke="#0078d4" stroke-width="1.2"/></svg>
+              Save To...
+            </button>
+          </div>
+        </div>
+        <div class="ribbon-group-label">Content Library</div>
+      </div>
+      <div class="ribbon-sep"></div>
+    </div>
+
+    <!-- ===== Main Area ===== -->
+    <div class="main-area">
+
+      <!-- Slide Panel (left) -->
+      <div class="slide-panel">
+        <div class="section-header">
+          <svg viewBox="0 0 10 6" width="8" height="6"><path d="M1 1l4 4 4-4" stroke="#666" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Default Section
+        </div>
+        <div class="slide-thumbnails" id="slideThumbnails">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+
+      <!-- Slide Editor (center) -->
+      <div class="slide-editor">
+        <div class="slide-canvas" id="slideCanvas">
+          <div class="slide-content">
+            <!-- Decorative geometric shapes -->
+            <div class="slide-deco deco-top-right">
+              <svg viewBox="0 0 200 200" width="200" height="200">
+                <circle cx="100" cy="100" r="80" fill="#e0e0e0" opacity=".3"/>
+                <rect x="60" y="60" width="80" height="80" fill="#d0d0d0" opacity=".3"/>
+              </svg>
+            </div>
+            <div class="slide-deco deco-bottom-right">
+              <svg viewBox="0 0 160 160" width="160" height="160">
+                <circle cx="80" cy="80" r="60" fill="#ccc" opacity=".25"/>
+                <rect x="30" y="30" width="100" height="100" rx="10" fill="#bbb" opacity=".2"/>
+              </svg>
+            </div>
+
+            <div class="slide-logo"></div>
+            <h1 class="slide-title">Product Initiatives</h1>
+            <p class="slide-subtitle">Strategic roadmap and priorities</p>
+
+            <div class="slide-footer-area">
+              <div class="slide-date-field">
+                <span class="date-text">March 12, 2026</span>
+                <span class="footer-text">Footer</span>
+              </div>
+            </div>
+            <div class="slide-confidential">Confidential</div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="notes-bar">
+          <span class="notes-text">This deck covers our product initiatives for the upcoming quarter, including the strategic roadmap, key features in development, and how we plan to address market demands and competitive positioning.</span>
+        </div>
+      </div>
+
+      <!-- ===== Task Pane (right) ===== -->
+      <div class="task-pane" id="taskPane">
+        <div class="task-pane-resize" id="resizeHandle"></div>
+
+        <!-- Pane Header -->
+        <div class="pane-header">
+          <div class="pane-header-top">
+            <span class="pane-title">Templafy</span>
+            <div class="pane-header-right">
+            </div>
+          </div>
+
+          <div class="browse-header">
+            <h2 class="browse-title" id="browseTitle">Slides & assets</h2>
+            <div class="browse-actions">
+              <button class="icon-btn-sm" id="favoritesNavBtn" title="Favorites">
+                <svg viewBox="0 0 12 12" width="14" height="14" fill="none"><path d="M5.99997 0.25C6.30737 0.25 6.58382 0.437921 6.69724 0.723633L7.91989 3.80273L11.0644 4.07227C11.3617 4.0979 11.6156 4.29736 11.7109 4.58008C11.8061 4.863 11.7243 5.17582 11.5029 5.37598L9.08298 7.56055L9.82224 10.835C9.88912 11.1316 9.7695 11.4396 9.52048 11.6143C9.27146 11.7887 8.94158 11.7958 8.68552 11.6318L5.99997 9.91113L3.31442 11.6318C3.05836 11.7958 2.72848 11.7887 2.47946 11.6143C2.23044 11.4396 2.11082 11.1316 2.1777 10.835L2.91696 7.56055L0.49704 5.37598C0.27563 5.17582 0.193853 4.863 0.289032 4.58008C0.384305 4.29736 0.638284 4.0979 0.935516 4.07227L4.08005 3.80273L5.3027 0.723633C5.41612 0.437921 5.69257 0.25 5.99997 0.25ZM5.13278 5.21875L2.78317 5.41992L4.57321 7.03516L4.04294 9.38379L5.99997 8.12988L7.957 9.38379L7.42673 7.03516L9.21677 5.41992L6.86716 5.21875L5.99997 3.0332L5.13278 5.21875Z" fill="#464646"/></svg>
+              </button>
+              <div class="browse-divider"></div>
+              <button class="icon-btn-sm" title="List view">
+                <svg viewBox="6 6 12 12" width="14" height="14" fill="none"><path d="M9 17H7V15H9V17ZM17 17H10V15H17V17ZM9 13H7V11H9V13ZM17 13H10V11H17V13ZM9 9H7V7H9V9ZM17 9H10V7H17V9Z" fill="#464646"/></svg>
+              </button>
+              <div class="browse-divider"></div>
+              <button class="icon-btn-sm" id="sortBtn" title="Sort" aria-haspopup="true" aria-expanded="false">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 2v12M4 14l-3-3M4 14l3-3M12 14V2M12 2l-3 3M12 2l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </button>
+            </div>
+            <!-- Sort Dropdown -->
+            <div class="sort-dropdown" id="sortDropdown">
+              <button class="sort-option" data-sort="relevant">
+                <svg class="sort-check" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5L4.5 9L10 3" stroke="#464646" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                <svg class="sort-icon" viewBox="0 0 12 12" width="13" height="12"><g clip-path="url(#clip_rel)"><path d="M2.65 0H4.05V8.85L5.75 7.15L6.7 8.1L3.35 11.45L0 8.1L0.95 7.15L2.65 8.85V0ZM6.7 0H8.3V0.7H7.8V8H7.2V0.7H6.7V0ZM8.55 0H10.15V8H8.55V0ZM9.05 0.6V7.4H9.65V0.6H9.05ZM10.4 0H12V4H10.9V8H10.4V0ZM10.9 0.6V3.4H11.5V0.6H10.9Z" fill="#464646"/></g><defs><clipPath id="clip_rel"><rect width="12" height="12" fill="white"/></clipPath></defs></svg>
+                <span class="sort-label">Most used</span>
+              </button>
+              <button class="sort-option" data-sort="name-asc">
+                <svg class="sort-check" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5L4.5 9L10 3" stroke="#464646" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                <svg class="sort-icon" viewBox="0 0 13 12" width="13" height="12"><path d="M1.5 1v10M1.5 11L0 9.5M1.5 11L3 9.5" stroke="#464646" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="6" y="5" font-size="5.5" font-weight="700" fill="#464646" font-family="Segoe UI, sans-serif">A</text><text x="6" y="11" font-size="5.5" font-weight="700" fill="#464646" font-family="Segoe UI, sans-serif">Z</text></svg>
+                <span class="sort-label">Name A–Z</span>
+              </button>
+              <button class="sort-option" data-sort="name-desc">
+                <svg class="sort-check" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5L4.5 9L10 3" stroke="#464646" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                <svg class="sort-icon" viewBox="0 0 13 12" width="13" height="12"><path d="M1.5 11V1M1.5 1L0 2.5M1.5 1L3 2.5" stroke="#464646" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="6" y="5" font-size="5.5" font-weight="700" fill="#464646" font-family="Segoe UI, sans-serif">Z</text><text x="6" y="11" font-size="5.5" font-weight="700" fill="#464646" font-family="Segoe UI, sans-serif">A</text></svg>
+                <span class="sort-label">Name Z–A</span>
+              </button>
+              <button class="sort-option active" data-sort="date-desc">
+                <svg class="sort-check" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5L4.5 9L10 3" stroke="#464646" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                <svg class="sort-icon" viewBox="0 0 12 12" width="12" height="12"><path d="M1.5 1v10M1.5 11L0 9.5M1.5 11L3 9.5" stroke="#464646" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.5 3h6M5.5 6h4.5M5.5 9h3" stroke="#464646" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+                <span class="sort-label">Newest</span>
+              </button>
+              <button class="sort-option" data-sort="date-asc">
+                <svg class="sort-check" viewBox="0 0 12 12" width="12" height="12"><path d="M2 6.5L4.5 9L10 3" stroke="#464646" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                <svg class="sort-icon" viewBox="0 0 12 12" width="12" height="12"><path d="M1.5 11V1M1.5 1L0 2.5M1.5 1L3 2.5" stroke="#464646" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M5.5 3h3M5.5 6h4.5M5.5 9h6" stroke="#464646" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+                <span class="sort-label">Oldest</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Search -->
+          <div class="pane-toolbar">
+            <div class="search-box">
+              <svg class="icon-search" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 0C6.98528 0 9 2.01472 9 4.5C9 5.38044 8.74564 6.20086 8.30859 6.89453L11.8281 10.4141L10.4141 11.8281L6.89453 8.30859C6.20086 8.74564 5.38044 9 4.5 9C2.01472 9 0 6.98528 0 4.5C0 2.01472 2.01472 0 4.5 0ZM4.5 2C3.11929 2 2 3.11929 2 4.5C2 5.88071 3.11929 7 4.5 7C5.88071 7 7 5.88071 7 4.5C7 3.11929 5.88071 2 4.5 2Z" fill="#464646"/></svg>
+              <input type="text" id="searchInput" placeholder="Search for assets" />
+              <button class="icon-btn" id="filterBtn" title="Filter" style="flex-shrink: 0; margin-right: 4px;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 9H4V11H2V9H0V7H6V9ZM10 11H8V6H10V11ZM4 6H2V1H4V6ZM10 3H12V5H6V3H8V1H10V3Z" fill="#464646"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tabs Row -->
+          <div class="pane-tabs-row">
+            <div class="pane-tabs-scroll">
+              <div class="pane-tabs">
+                <button class="pane-tab active" data-tab="slides">
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 0C15.1046 0 16 0.895431 16 2V10C16 11.1046 15.1046 12 14 12H2C0.895431 12 0 11.1046 0 10V2C0 0.895431 0.895431 0 2 0H14ZM5 5C5 5.55228 4.55228 6 4 6H2C2 7.65685 3.34315 9 5 9C6.65685 9 8 7.65685 8 6C8 4.34315 6.65685 3 5 3V5ZM10 7C9.44771 7 9 7.44772 9 8C9 8.55229 9.44771 9 10 9H13C13.5523 9 14 8.55229 14 8C14 7.44772 13.5523 7 13 7H10ZM10 3C9.44771 3 9 3.44772 9 4C9 4.55228 9.44771 5 10 5H13C13.5523 5 14 4.55228 14 4C14 3.44772 13.5523 3 13 3H10Z" fill="#4A61ED"/></svg>
+                  Slides
+                </button>
+                <button class="pane-tab" data-tab="visuals">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 1C14.1046 1 15 1.89543 15 3V13C15 14.1046 14.1046 15 13 15H3C1.89543 15 1 14.1046 1 13V3C1 1.89543 1.89543 1 3 1H13ZM8.87109 7.41309C8.67246 7.19246 8.32653 7.19241 8.12793 7.41309L4.75098 11.166C4.46178 11.4878 4.69029 12 5.12305 12H11.877C12.3098 12 12.5386 11.4868 12.249 11.165L8.87109 7.41309ZM5.5 4C4.67157 4 4 4.67157 4 5.5C4 6.32843 4.67157 7 5.5 7C6.32843 7 7 6.32843 7 5.5C7 4.67157 6.32843 4 5.5 4Z" fill="#464646"/></svg>
+                  Visuals
+                </button>
+                <button class="pane-tab" data-tab="elements">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9 3C12.314 3 15 5.686 15 9C15 12.314 12.314 15 9 15C5.686 15 3 12.314 3 9H7C8.10457 9 9 8.10457 9 7V3Z" fill="#464646"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7 1.5C7 1.22386 6.77536 0.997828 6.50015 1.02052C3.58489 1.26089 1.26089 3.58489 1.02052 6.50015C0.997828 6.77536 1.22386 7 1.5 7H6C6.55228 7 7 6.55228 7 6V1.5Z" fill="#464646"/></svg>
+                  Slide elements
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breadcrumb Bar (visible when inside a folder) -->
+        <div class="breadcrumb-bar" id="breadcrumbBar" style="display: none;">
+          <button class="breadcrumb-back-btn" id="breadcrumbBack" title="Go back">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="breadcrumb-path" id="breadcrumbPath">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Asset Content -->
+        <div class="asset-list" id="assetList">
+          <!-- Populated by JS -->
+        </div>
+
+      </div>
+
+      <!-- ===== Right Icon Rail (always visible) ===== -->
+      <div class="task-pane-collapsed" id="taskPaneCollapsed">
+        <button class="collapsed-btn" id="expandPaneChevron" title="Expand pane">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(#clip0_expand)"><path d="M0 6C0 2.68629 2.68629 0 6 0H18C21.3137 0 24 2.68629 24 6V18C24 21.3137 21.3137 24 18 24H6C2.68629 24 0 21.3137 0 18V6Z" fill="white"/><rect width="24" height="24" rx="6" fill="white"/><path d="M15.6211 11.9997L12.0855 8.46418L13.4998 7.04997L18.4495 11.9997L13.4998 16.9495L12.0855 15.5352L15.6211 11.9997Z" fill="#464646"/><path d="M9.62108 11.9997L6.08554 8.46418L7.49976 7.04997L12.4495 11.9997L7.49976 16.9495L6.08554 15.5352L9.62108 11.9997Z" fill="#464646"/></g><defs><clipPath id="clip0_expand"><path d="M0 6C0 2.68629 2.68629 0 6 0H18C21.3137 0 24 2.68629 24 6V18C24 21.3137 21.3137 24 18 24H6C2.68629 24 0 21.3137 0 18V6Z" fill="white"/></clipPath></defs></svg>
+        </button>
+        <button class="collapsed-btn" id="expandPaneBtn" title="Expand">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 3C17.1046 3 18 3.89543 18 5V5.72559L9.8584 15H4C2.89543 15 2 14.1046 2 13V5C2 3.89543 2.89543 3 4 3H16ZM7 8C7 8.55228 6.55228 9 6 9H4C4 10.6569 5.34315 12 7 12C8.65685 12 10 10.6569 10 9C10 7.34315 8.65685 6 7 6V8ZM12 6C11.4477 6 11 6.44772 11 7C11 7.55228 11.4477 8 12 8H14C14.5523 8 15 7.55228 15 7C15 6.44772 14.5523 6 14 6H12Z" fill="#464646"/><path d="M15 13C15.2121 13 15.4154 13.0844 15.5654 13.2344C15.6966 13.3656 15.7777 13.5377 15.7959 13.7207L15.8115 14.0371C15.8661 14.5866 16.1091 15.1032 16.5029 15.4971C16.8968 15.8909 17.4134 16.1339 17.9629 16.1885L18.2793 16.2041C18.4623 16.2223 18.6344 16.3034 18.7656 16.4346C18.9156 16.5846 19 16.7879 19 17C19 17.2121 18.9156 17.4154 18.7656 17.5654C18.6344 17.6966 18.4623 17.7777 18.2793 17.7959L17.9629 17.8115C17.4134 17.8661 16.8968 18.1091 16.5029 18.5029C16.1091 18.8968 15.8661 19.4134 15.8115 19.9629L15.7959 20.2793C15.7777 20.4623 15.6966 20.6344 15.5654 20.7656C15.4154 20.9156 15.2121 21 15 21C14.7879 21 14.5846 20.9156 14.4346 20.7656C14.3034 20.6344 14.2223 20.4623 14.2041 20.2793L14.1885 19.9629C14.1339 19.4134 13.8909 18.8968 13.4971 18.5029C13.1032 18.1091 12.5866 17.8661 12.0371 17.8115L11.7207 17.7959C11.5377 17.7777 11.3656 17.6966 11.2344 17.5654C11.0844 17.4154 11 17.2121 11 17C11 16.7879 11.0844 16.5846 11.2344 16.4346C11.3656 16.3034 11.5377 16.2223 11.7207 16.2041L12.0371 16.1885C12.5866 16.1339 13.1032 15.8909 13.4971 15.4971C13.8909 15.1032 14.1339 14.5866 14.1885 14.0371L14.2041 13.7207C14.2223 13.5377 14.3034 13.3656 14.4346 13.2344C14.5846 13.0844 14.7879 13 15 13Z" fill="#464646"/></svg>
+        </button>
+        <button class="collapsed-btn" id="collapsedLibraryBtn" title="Content Library">
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none"><path d="M13.2 11.2C12.5635 11.2 11.953 10.9471 11.5029 10.4971C11.0529 10.047 10.8 9.43652 10.8 8.8C10.8 8.58783 10.7157 8.38434 10.5657 8.23431C10.4157 8.08429 10.2122 8 10 8C9.78783 8 9.58434 8.08429 9.43431 8.23431C9.28429 8.38434 9.2 8.58783 9.2 8.8C9.2 9.43652 8.94714 10.047 8.49706 10.4971C8.04697 10.9471 7.43652 11.2 6.8 11.2C6.58783 11.2 6.38434 11.2843 6.23431 11.4343C6.08429 11.5843 6 11.7878 6 12C6 12.2122 6.08429 12.4157 6.23431 12.5657C6.38434 12.7157 6.58783 12.8 6.8 12.8C7.43652 12.8 8.04697 13.0529 8.49706 13.5029C8.94714 13.953 9.2 14.5635 9.2 15.2C9.2 15.4122 9.28429 15.6157 9.43431 15.7657C9.58434 15.9157 9.78783 16 10 16C10.2122 16 10.4157 15.9157 10.5657 15.7657C10.7157 15.6157 10.8 15.4122 10.8 15.2C10.8 14.5635 11.0529 13.953 11.5029 13.5029C11.953 13.0529 12.5635 12.8 13.2 12.8C13.4122 12.8 13.6157 12.7157 13.7657 12.5657C13.9157 12.4157 14 12.2122 14 12C14 11.7878 13.9157 11.5843 13.7657 11.4343C13.6157 11.2843 13.4122 11.2 13.2 11.2Z" fill="#464646"/><path d="M16.4 5.4C15.9226 5.4 15.4648 5.21036 15.1272 4.87279C14.7896 4.53523 14.6 4.07739 14.6 3.6C14.6 3.44087 14.5368 3.28826 14.4243 3.17574C14.3117 3.06321 14.1591 3 14 3C13.8409 3 13.6883 3.06321 13.5757 3.17574C13.4632 3.28826 13.4 3.44087 13.4 3.6C13.4 4.07739 13.2104 4.53523 12.8728 4.87279C12.5352 5.21036 12.0774 5.4 11.6 5.4C11.4409 5.4 11.2883 5.46321 11.1757 5.57574C11.0632 5.68826 11 5.84087 11 6C11 6.15913 11.0632 6.31174 11.1757 6.42426C11.2883 6.53679 11.4409 6.6 11.6 6.6C12.0774 6.6 12.5352 6.78964 12.8728 7.12721C13.2104 7.46477 13.4 7.92261 13.4 8.4C13.4 8.55913 13.4632 8.71174 13.5757 8.82426C13.6883 8.93679 13.8409 9 14 9C14.1591 9 14.3117 8.93679 14.4243 8.82426C14.5368 8.71174 14.6 8.55913 14.6 8.4C14.6 7.92261 14.7896 7.46477 15.1272 7.12721C15.4648 6.78964 15.9226 6.6 16.4 6.6C16.5591 6.6 16.7117 6.53679 16.8243 6.42426C16.9368 6.31174 17 6.15913 17 6C17 5.84087 16.9368 5.68826 16.8243 5.57574C16.7117 5.46321 16.5591 5.4 16.4 5.4Z" fill="#464646"/><path d="M4 11.5C4 12.3284 3.32843 13 2.5 13H1.5C0.671573 13 -7.24234e-08 12.3284 0 11.5C7.24234e-08 10.6716 0.671573 10 1.5 10H2.5C3.32843 10 4 10.6716 4 11.5Z" fill="#464646"/><path d="M8 6.5C8 7.32843 7.32843 8 6.5 8L1.5 8C0.671573 8 4.04414e-07 7.32843 4.76837e-07 6.5C5.49261e-07 5.67157 0.671573 5 1.5 5L6.5 5C7.32843 5 8 5.67157 8 6.5Z" fill="#464646"/><path d="M12 1.5C12 2.32843 11.3284 3 10.5 3L1.5 3C0.671573 3 4.04413e-07 2.32843 4.76836e-07 1.5C5.4926e-07 0.671572 0.671573 -7.24234e-08 1.5 0L10.5 7.86805e-07C11.3284 8.59228e-07 12 0.671573 12 1.5Z" fill="#464646"/></svg>
+        </button>
+        <button class="collapsed-btn" id="collapsedFilterBtn" title="Filter">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 11C7.44772 11 6.99151 11.4522 7.10445 11.9928C7.54741 14.113 9.34716 16 11.5 16C13.9853 16 16 13.9853 16 11.5C16 9.35477 14.1264 7.56015 12.0153 7.1092C11.4665 6.99197 11.0105 7.46169 11.0232 8.02272L11.0328 8.4432C11.0647 9.84578 9.9364 11 8.53345 11H8Z" fill="#3D3D3D"/><path d="M8 0C9.10457 0 10 0.895431 10 2V8C10 9.10457 9.10457 10 8 10H2C0.895431 10 0 9.10457 0 8V2C3.86553e-08 0.895431 0.895431 1.61066e-08 2 0H8ZM4.87598 4.42969C4.67672 4.20228 4.32217 4.2021 4.12305 4.42969L1.72559 7.1709C1.44286 7.49413 1.67219 7.99978 2.10156 8H6.89844C7.32773 7.99971 7.55706 7.4941 7.27441 7.1709L4.87598 4.42969ZM7 2C6.44772 2 6 2.44772 6 3C6 3.55228 6.44772 4 7 4C7.55228 4 8 3.55228 8 3C8 2.44772 7.55228 2 7 2Z" fill="#3D3D3D"/></svg>
+        </button>
+        <div class="collapsed-divider"></div>
+        <button class="collapsed-btn" title="Visuals">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 2C15.1046 2 16 2.89543 16 4V12C16 13.1046 15.1046 14 14 14H2C0.895431 14 0 13.1046 0 12V4C0 2.89543 0.895431 2 2 2H14ZM5 7C5 7.55228 4.55228 8 4 8H2C2 9.65685 3.34315 11 5 11C6.65685 11 8 9.65685 8 8C8 6.34315 6.65685 5 5 5V7ZM10 9C9.44771 9 9 9.44772 9 10C9 10.5523 9.44771 11 10 11H13C13.5523 11 14 10.5523 14 10C14 9.44772 13.5523 9 13 9H10ZM10 5C9.44771 5 9 5.44772 9 6C9 6.55228 9.44771 7 10 7H13C13.5523 7 14 6.55228 14 6C14 5.44772 13.5523 5 13 5H10Z" fill="#1B1B1B"/></svg>
+        </button>
+        <button class="collapsed-btn" title="Slide elements">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 1C14.1046 1 15 1.89543 15 3V13C15 14.1046 14.1046 15 13 15H3C1.89543 15 1 14.1046 1 13V3C1 1.89543 1.89543 1 3 1H13ZM8.87109 7.41309C8.67246 7.19246 8.32653 7.19241 8.12793 7.41309L4.75098 11.166C4.46178 11.4878 4.69029 12 5.12305 12H11.877C12.3098 12 12.5386 11.4868 12.249 11.165L8.87109 7.41309ZM5.5 4C4.67157 4 4 4.67157 4 5.5C4 6.32843 4.67157 7 5.5 7C6.32843 7 7 6.32843 7 5.5C7 4.67157 6.32843 4 5.5 4Z" fill="#464646"/></svg>
+        </button>
+        <button class="collapsed-btn" title="Templates">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 0C10.2091 0 12 1.79086 12 4C12 4.36698 11.949 4.72197 11.8564 5.05957C12.0651 5.02079 12.2801 5 12.5 5C14.433 5 16 6.567 16 8.5C16 10.433 14.433 12 12.5 12C11.959 12 11.4466 11.8774 10.9893 11.6582C11.3094 12.1078 11.5 12.6561 11.5 13.25C11.5 14.7688 10.2688 16 8.75 16C7.89611 16 7.1333 15.6107 6.62891 15H7C8.65685 15 10 13.6569 10 12V7C10 5.34315 8.65685 4 7 4H4C4 1.79086 5.79086 0 8 0Z" fill="#464646"/><path d="M7 5C8.10457 5 9 5.89543 9 7V12C9 13.1046 8.10457 14 7 14H2C0.895431 14 0 13.1046 0 12V7C0 5.89543 0.895431 5 2 5H7ZM5.06055 9.12305C4.93286 8.98118 4.70971 8.98117 4.58203 9.12305L2.41113 11.5352C2.22526 11.742 2.3722 12.0713 2.65039 12.0713H6.99219C7.27043 12.0713 7.41747 11.742 7.23145 11.5352L5.06055 9.12305ZM2.89258 6.92871C2.36024 6.92886 1.92886 7.36024 1.92871 7.89258C1.92871 8.42505 2.36014 8.85727 2.89258 8.85742C3.42514 8.85742 3.85742 8.42514 3.85742 7.89258C3.85727 7.36014 3.42505 6.92871 2.89258 6.92871Z" fill="#464646"/></svg>
+        </button>
+        <div class="collapsed-spacer"></div>
+        <button class="collapsed-btn" title="Add new">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M10.2061 0.00488281C12.3194 0.112115 14 1.85996 14 4C16.2091 4 18 5.79086 18 8V14C18 16.2091 16.2091 18 14 18H8C5.79086 18 4 16.2091 4 14L3.79395 13.9951C1.7488 13.8913 0.108652 12.2512 0.00488281 10.2061L0 10V4C0 1.85996 1.68056 0.112115 3.79395 0.00488281L4 0H10L10.2061 0.00488281ZM11 7C10.4477 7 10 7.44772 10 8V10H8C7.44772 10 7 10.4477 7 11C7.00008 11.5522 7.44776 12 8 12H10V14C10.0001 14.5522 10.4478 15 11 15C11.5522 14.9999 11.9999 14.5522 12 14V12H14C14.5522 11.9999 14.9999 11.5522 15 11C15 10.4478 14.5522 10.0001 14 10H12V8C12 7.44776 11.5522 7.00008 11 7ZM4 2C2.96435 2 2.113 2.78722 2.01074 3.7959L2 4V10C2 11.1046 2.89543 12 4 12V8C4 5.79086 5.79086 4 8 4H12C12 2.96435 11.2128 2.113 10.2041 2.01074L10 2H4Z" fill="#464646"/></svg>
+        </button>
+        <button class="collapsed-btn" title="Download">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M14 13C14 13.5523 13.5523 14 13 14H1C0.447715 14 0 13.5523 0 13V12H14V13ZM8 6.65625L9.82812 4.82812L11.2422 6.24219L8.41309 9.07031L8.41406 9.07129L7 10.4854L5.58594 9.07129V9.07031L2.75781 6.24219L4.17188 4.82812L6 6.65625V0H8V6.65625Z" fill="#464646"/></svg>
+        </button>
+        <button class="collapsed-btn" title="Profile">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 9C9.38071 9 10.5 7.88071 10.5 6.5C10.5 5.11929 9.38071 4 8 4C6.61929 4 5.5 5.11929 5.5 6.5C5.5 7.88071 6.61929 9 8 9Z" fill="#464646"/><path d="M8.00002 10C5.86902 10 4.06302 11.338 3.34302 13.216C4.58102 14.322 6.20902 15 8.00002 15C9.79102 15 11.419 14.322 12.657 13.216C11.937 11.339 10.13 10 8.00002 10Z" fill="#464646"/><path d="M8 16C3.589 16 0 12.411 0 8C0 3.589 3.589 0 8 0C12.411 0 16 3.589 16 8C16 12.411 12.411 16 8 16ZM8 2C4.691 2 2 4.691 2 8C2 11.309 4.691 14 8 14C11.309 14 14 11.309 14 8C14 4.691 11.309 2 8 2Z" fill="#464646"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ===== Status Bar ===== -->
+    <div class="status-bar">
+      <div class="status-left">
+        <span>Slide 1 of 6</span>
+        <span class="status-sep">|</span>
+        <span>English (United States)</span>
+        <span class="status-sep">|</span>
+        <span class="status-accessibility">
+          <svg viewBox="0 0 14 14" width="11" height="11"><circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v4l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Accessibility: Investigate
+        </span>
+      </div>
+      <div class="status-right">
+        <button class="status-btn">Notes</button>
+        <button class="status-btn">Comments</button>
+        <div class="status-views">
+          <button class="status-view-btn active" title="Normal">
+            <svg viewBox="0 0 16 16" width="13" height="13"><rect x="1" y="3" width="5" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="8" y="3" width="7" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+          </button>
+          <button class="status-view-btn" title="Slide Sorter">
+            <svg viewBox="0 0 16 16" width="13" height="13"><rect x="1" y="1" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="9" y="1" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="1" y="9" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="9" y="9" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+          </button>
+          <button class="status-view-btn" title="Reading View">
+            <svg viewBox="0 0 16 16" width="13" height="13"><rect x="1" y="3" width="14" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+          </button>
+          <button class="status-view-btn" title="Slide Show">
+            <svg viewBox="0 0 16 16" width="13" height="13"><rect x="1" y="2" width="14" height="10" rx="1" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M4 14h8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M8 12v2" stroke="currentColor" stroke-width="1.1"/></svg>
+          </button>
+        </div>
+        <div class="zoom-control">
+          <button class="zoom-btn">−</button>
+          <div class="zoom-slider"><div class="zoom-track"><div class="zoom-thumb"></div></div></div>
+          <button class="zoom-btn">+</button>
+          <span class="zoom-pct">90%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Onboarding popover (reusable, repositioned via JS) -->
+  <div class="onboarding-popover" id="onboardingPopover">
+    <button class="onboarding-popover-close" id="onboardingPopoverClose">&times;</button>
+    <div class="onboarding-popover-step" id="onboardingPopoverStep">
+      <span class="onboarding-popover-step-counter" id="onboardingPopoverStepCounter"></span>
+      <div class="onboarding-popover-step-dots" id="onboardingPopoverStepDots"></div>
+    </div>
+    <div class="onboarding-popover-header">
+      <div class="onboarding-popover-icon" id="onboardingPopoverIcon"></div>
+      <span class="onboarding-popover-title" id="onboardingPopoverTitle"></span>
+    </div>
+    <p class="onboarding-popover-text" id="onboardingPopoverText"></p>
+    <div class="onboarding-popover-dots" id="onboardingPopoverDotsRow"></div>
+  </div>
+
+  <script>
+    window.ONBOARDING_VERSION = "E";
+    window.ONBOARDING_SKIP_FIRST_STEP = true;
+    window.ONBOARDING_AUTO_POPOVER_DELAY = 10000;
+    window.ONBOARDING_AUTO_POPOVER_HIDE = 2000;
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
