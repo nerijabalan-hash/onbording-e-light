@@ -143,12 +143,12 @@ const MOCK_DATA = {
 
 // Slide thumbnails data
 const SLIDES = [
-  { num: 1, title: 'Product Initiatives', sub: 'Strategic roadmap and priorities', hasLogo: true },
-  { num: 2, title: 'Product roadmap', sub: 'Key milestones and timeline', hasChart: false },
-  { num: 3, title: 'Feature highlights', sub: 'What we are building', hasChart: false },
-  { num: 4, title: 'Market demands', sub: 'Customer needs and trends', hasChart: true },
-  { num: 5, title: 'Competitive landscape', sub: 'Positioning and differentiation', hasChart: true },
-  { num: 6, title: 'Industry overview', sub: 'Market context and opportunity', hasChart: true },
+  { num: 1, title: 'Product Initiatives', sub: 'Strategic roadmap and priorities for Q2 2026', body: 'Aligning product vision with market opportunities', tags: ['Strategy', 'Roadmap'], hasLogo: true },
+  { num: 2, title: 'Product roadmap', sub: 'Key milestones and timeline', body: 'Delivery targets across engineering and design', tags: ['Planning'], hasChart: false },
+  { num: 3, title: 'Feature highlights', sub: 'What we are building', body: 'Core capabilities launching this quarter', tags: ['Features', 'Q2'], hasChart: false },
+  { num: 4, title: 'Market demands', sub: 'Customer needs and trends', body: 'Data-driven insights from user research', tags: ['Research'], hasChart: true },
+  { num: 5, title: 'Competitive landscape', sub: 'Positioning and differentiation', body: 'How we compare across key dimensions', tags: ['Analysis'], hasChart: true },
+  { num: 6, title: 'Industry overview', sub: 'Market context and opportunity', body: 'Sector trends and growth forecasts', tags: ['Market'], hasChart: true },
 ];
 
 // --- State ---
@@ -283,14 +283,18 @@ function renderFavoriteCard(asset) {
 
   const folder = SLIDE_FOLDER_ORIGIN[asset.id] || '';
 
+  const favVariants = {
+    1: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/><rect width="158" height="3" fill="#E07A3A"/><circle cx="130" cy="15" r="20" fill="#E07A3A" opacity=".06"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/><rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/><rect x="10" y="24" width="70" height="5" rx="1" fill="#c45a20" opacity=".6"/><rect x="10" y="33" width="50" height="3" rx="1" fill="#d4956a" opacity=".35"/><rect x="10" y="42" width="14" height="5" rx="2.5" fill="#E07A3A" opacity=".12"/><rect x="27" y="42" width="16" height="5" rx="2.5" fill="#E07A3A" opacity=".12"/><rect x="10" y="53" width="90" height="2.5" rx="1" fill="#ddd" opacity=".4"/><rect x="10" y="58" width="75" height="2.5" rx="1" fill="#ddd" opacity=".3"/><rect x="10" y="72" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`,
+    2: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/><rect width="158" height="3" fill="#E07A3A"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/><rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/><rect x="10" y="24" width="55" height="4.5" rx="1" fill="#c45a20" opacity=".55"/><rect x="10" y="32" width="40" height="3" rx="1" fill="#d4956a" opacity=".3"/><rect x="10" y="44" width="90" height="2.5" rx="1" fill="#ddd" opacity=".35"/><rect x="10" y="49" width="80" height="2.5" rx="1" fill="#ddd" opacity=".25"/><rect x="110" y="60" width="6" height="16" rx="1" fill="#E07A3A" opacity=".5"/><rect x="120" y="55" width="6" height="21" rx="1" fill="#E07A3A" opacity=".35"/><rect x="130" y="50" width="6" height="26" rx="1" fill="#E07A3A" opacity=".6"/><rect x="140" y="58" width="6" height="18" rx="1" fill="#E07A3A" opacity=".25"/><rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`,
+    3: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/><rect width="158" height="3" fill="#E07A3A"/><circle cx="140" cy="70" r="15" fill="#E07A3A" opacity=".05"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/><rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/><rect x="10" y="24" width="60" height="4.5" rx="1" fill="#c45a20" opacity=".55"/><rect x="10" y="36" width="62" height="2.5" rx="1" fill="#ddd" opacity=".4"/><rect x="10" y="41" width="62" height="2.5" rx="1" fill="#ddd" opacity=".3"/><rect x="84" y="36" width="62" height="2.5" rx="1" fill="#ddd" opacity=".4"/><rect x="84" y="41" width="62" height="2.5" rx="1" fill="#ddd" opacity=".3"/><rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`,
+    4: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/><rect width="158" height="3" fill="#E07A3A"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/><rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/><rect x="10" y="24" width="50" height="4.5" rx="1" fill="#c45a20" opacity=".55"/><rect x="85" y="20" width="62" height="40" rx="3" fill="#E07A3A" opacity=".08"/><circle cx="100" cy="34" r="6" fill="#E07A3A" opacity=".12"/><path d="M90 52l10-8 8 5 10-6v9H90z" fill="#E07A3A" opacity=".1"/><rect x="10" y="36" width="65" height="2.5" rx="1" fill="#ddd" opacity=".4"/><rect x="10" y="41" width="65" height="2.5" rx="1" fill="#ddd" opacity=".3"/><rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`,
+    5: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/><rect width="158" height="3" fill="#E07A3A"/><rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/><rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/><rect x="10" y="24" width="55" height="4.5" rx="1" fill="#c45a20" opacity=".55"/><circle cx="40" cy="58" r="18" fill="none" stroke="#E07A3A" stroke-width="5" opacity=".15" stroke-dasharray="28 85"/><circle cx="40" cy="58" r="18" fill="none" stroke="#E07A3A" stroke-width="5" opacity=".3" stroke-dasharray="45 68" stroke-dashoffset="-28"/><rect x="75" y="44" width="8" height="3" rx="1.5" fill="#E07A3A" opacity=".3"/><rect x="86" y="44" width="30" height="2.5" rx="1" fill="#ddd" opacity=".35"/><rect x="75" y="52" width="8" height="3" rx="1.5" fill="#E07A3A" opacity=".15"/><rect x="86" y="52" width="25" height="2.5" rx="1" fill="#ddd" opacity=".35"/><rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`
+  };
+  const fv = favVariants[asset.color] || favVariants[1];
   card.innerHTML = `
-    <div class="asset-card-thumb color-${asset.color}">
+    <div class="asset-card-thumb branded-card-thumb">
       <svg viewBox="0 0 158 89" width="100%" height="100%" fill="none" preserveAspectRatio="xMidYMid meet">
-        <rect width="158" height="89" rx="2" fill="#f0f0f0"/>
-        <rect x="12" y="10" width="60" height="30" rx="2" fill="#ccc" opacity=".4"/>
-        <rect x="12" y="48" width="134" height="6" rx="2" fill="#ddd" opacity=".5"/>
-        <rect x="12" y="60" width="100" height="5" rx="2" fill="#ddd" opacity=".3"/>
-        <rect x="12" y="72" width="80" height="4" rx="2" fill="#ddd" opacity=".2"/>
+        ${fv}
       </svg>
       <div class="fav-star-badge">
         <svg viewBox="0 0 12 12" width="14" height="14" fill="none"><path d="M5.99997 0.25C6.30737 0.25 6.58382 0.437921 6.69724 0.723633L7.91989 3.80273L11.0644 4.07227C11.3617 4.0979 11.6156 4.29736 11.7109 4.58008C11.8061 4.863 11.7243 5.17582 11.5029 5.37598L9.08298 7.56055L9.82224 10.835C9.88912 11.1316 9.7695 11.4396 9.52048 11.6143C9.27146 11.7887 8.94158 11.7958 8.68552 11.6318L5.99997 9.91113L3.31442 11.6318C3.05836 11.7958 2.72848 11.7887 2.47946 11.6143C2.23044 11.4396 2.11082 11.1316 2.1777 10.835L2.91696 7.56055L0.49704 5.37598C0.27563 5.17582 0.193853 4.863 0.289032 4.58008C0.384305 4.29736 0.638284 4.0979 0.935516 4.07227L4.08005 3.80273L5.3027 0.723633C5.41612 0.437921 5.69257 0.25 5.99997 0.25Z" fill="#daa520"/></svg>
@@ -414,16 +418,29 @@ function renderSlideThumbnails() {
   const container = document.getElementById('slideThumbnails');
   container.innerHTML = '';
 
+  const chartColors = ['#c45a20', '#E07A3A', '#f0a76e', '#f5c4a0', '#e0cfc0'];
+
   SLIDES.forEach((slide, i) => {
     const wrapper = document.createElement('div');
     wrapper.className = `slide-thumb-wrapper${i === 0 ? ' active' : ''}`;
+
+    const tagsHtml = (slide.tags || []).map(t => `<span class="mini-tag">${t}</span>`).join('');
+    const chartHtml = slide.hasChart ? `<div class="mini-chart">${
+      [10, 14, 8, 16, 12].map((h, ci) => `<div class="mini-chart-bar" style="height:${h}px;background:${chartColors[ci]}"></div>`).join('')
+    }</div>` : '';
+
     wrapper.innerHTML = `
       <span class="slide-num">${slide.num}</span>
       <div class="slide-thumb">
-        <div class="slide-thumb-content">
+        <div class="slide-thumb-content branded-thumb">
+          <div class="thumb-shape-circle"></div>
+          <div class="thumb-shape-rect"></div>
+          <div class="mini-logo"><div class="mini-logo-icon"></div><span class="mini-logo-text">Company</span></div>
           <div class="mini-title">${slide.title}</div>
           <div class="mini-sub">${slide.sub}</div>
-          <div class="slide-thumb-deco"></div>
+          <div class="mini-body">${slide.body || ''}</div>
+          <div class="mini-tags">${tagsHtml}</div>
+          ${chartHtml}
         </div>
       </div>
     `;
@@ -591,14 +608,97 @@ function renderAssetCard(asset) {
   const card = document.createElement('div');
   card.className = 'asset-card';
   card.draggable = true;
+  // Branded card thumb variations
+  const cardVariants = {
+    1: { // Title slide style
+      bg: '#fdf6f0',
+      svg: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/>
+        <rect width="158" height="3" fill="#E07A3A"/>
+        <circle cx="130" cy="15" r="20" fill="#E07A3A" opacity=".06"/>
+        <rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/>
+        <rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/>
+        <rect x="10" y="24" width="70" height="5" rx="1" fill="#c45a20" opacity=".6"/>
+        <rect x="10" y="33" width="50" height="3" rx="1" fill="#d4956a" opacity=".35"/>
+        <rect x="10" y="42" width="14" height="5" rx="2.5" fill="#E07A3A" opacity=".12"/><rect x="27" y="42" width="16" height="5" rx="2.5" fill="#E07A3A" opacity=".12"/>
+        <rect x="10" y="53" width="90" height="2.5" rx="1" fill="#ddd" opacity=".4"/>
+        <rect x="10" y="58" width="75" height="2.5" rx="1" fill="#ddd" opacity=".3"/>
+        <rect x="10" y="72" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`
+    },
+    2: { // Content with chart
+      bg: '#fdf6f0',
+      svg: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/>
+        <rect width="158" height="3" fill="#E07A3A"/>
+        <rect x="125" y="-5" width="25" height="18" rx="3" fill="#E07A3A" opacity=".04" transform="rotate(12 137 4)"/>
+        <rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/>
+        <rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/>
+        <rect x="10" y="24" width="55" height="4.5" rx="1" fill="#c45a20" opacity=".55"/>
+        <rect x="10" y="32" width="40" height="3" rx="1" fill="#d4956a" opacity=".3"/>
+        <rect x="10" y="44" width="90" height="2.5" rx="1" fill="#ddd" opacity=".35"/>
+        <rect x="10" y="49" width="80" height="2.5" rx="1" fill="#ddd" opacity=".25"/>
+        <rect x="10" y="54" width="70" height="2.5" rx="1" fill="#ddd" opacity=".2"/>
+        <rect x="110" y="60" width="6" height="16" rx="1" fill="#E07A3A" opacity=".5"/>
+        <rect x="120" y="55" width="6" height="21" rx="1" fill="#E07A3A" opacity=".35"/>
+        <rect x="130" y="50" width="6" height="26" rx="1" fill="#E07A3A" opacity=".6"/>
+        <rect x="140" y="58" width="6" height="18" rx="1" fill="#E07A3A" opacity=".25"/>
+        <rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`
+    },
+    3: { // Two-column layout
+      bg: '#fdf6f0',
+      svg: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/>
+        <rect width="158" height="3" fill="#E07A3A"/>
+        <circle cx="140" cy="70" r="15" fill="#E07A3A" opacity=".05"/>
+        <rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/>
+        <rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/>
+        <rect x="10" y="24" width="60" height="4.5" rx="1" fill="#c45a20" opacity=".55"/>
+        <rect x="10" y="36" width="62" height="2.5" rx="1" fill="#ddd" opacity=".4"/>
+        <rect x="10" y="41" width="62" height="2.5" rx="1" fill="#ddd" opacity=".3"/>
+        <rect x="10" y="46" width="50" height="2.5" rx="1" fill="#ddd" opacity=".25"/>
+        <rect x="10" y="55" width="62" height="2.5" rx="1" fill="#ddd" opacity=".35"/>
+        <rect x="10" y="60" width="55" height="2.5" rx="1" fill="#ddd" opacity=".25"/>
+        <rect x="84" y="36" width="62" height="2.5" rx="1" fill="#ddd" opacity=".4"/>
+        <rect x="84" y="41" width="62" height="2.5" rx="1" fill="#ddd" opacity=".3"/>
+        <rect x="84" y="46" width="50" height="2.5" rx="1" fill="#ddd" opacity=".25"/>
+        <rect x="84" y="55" width="62" height="2.5" rx="1" fill="#ddd" opacity=".35"/>
+        <rect x="84" y="60" width="55" height="2.5" rx="1" fill="#ddd" opacity=".25"/>
+        <rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`
+    },
+    4: { // Image + text layout
+      bg: '#fdf6f0',
+      svg: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/>
+        <rect width="158" height="3" fill="#E07A3A"/>
+        <rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/>
+        <rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/>
+        <rect x="10" y="24" width="50" height="4.5" rx="1" fill="#c45a20" opacity=".55"/>
+        <rect x="85" y="20" width="62" height="40" rx="3" fill="#E07A3A" opacity=".08"/>
+        <circle cx="100" cy="34" r="6" fill="#E07A3A" opacity=".12"/>
+        <path d="M90 52l10-8 8 5 10-6v9H90z" fill="#E07A3A" opacity=".1"/>
+        <rect x="10" y="36" width="65" height="2.5" rx="1" fill="#ddd" opacity=".4"/>
+        <rect x="10" y="41" width="65" height="2.5" rx="1" fill="#ddd" opacity=".3"/>
+        <rect x="10" y="46" width="50" height="2.5" rx="1" fill="#ddd" opacity=".25"/>
+        <rect x="10" y="55" width="14" height="5" rx="2.5" fill="#E07A3A" opacity=".15"/>
+        <rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`
+    },
+    5: { // Pie chart layout
+      bg: '#fdf6f0',
+      svg: `<rect width="158" height="89" rx="2" fill="#fdf6f0"/>
+        <rect width="158" height="3" fill="#E07A3A"/>
+        <rect x="10" y="10" width="6" height="6" rx="1.5" fill="#E07A3A"/>
+        <rect x="19" y="11" width="22" height="3.5" rx="1" fill="#E07A3A" opacity=".25"/>
+        <rect x="10" y="24" width="55" height="4.5" rx="1" fill="#c45a20" opacity=".55"/>
+        <circle cx="40" cy="58" r="18" fill="none" stroke="#E07A3A" stroke-width="5" opacity=".15" stroke-dasharray="28 85"/>
+        <circle cx="40" cy="58" r="18" fill="none" stroke="#E07A3A" stroke-width="5" opacity=".3" stroke-dasharray="45 68" stroke-dashoffset="-28"/>
+        <circle cx="40" cy="58" r="18" fill="none" stroke="#E07A3A" stroke-width="5" opacity=".1" stroke-dasharray="20 93" stroke-dashoffset="-73"/>
+        <rect x="75" y="44" width="8" height="3" rx="1.5" fill="#E07A3A" opacity=".3"/><rect x="86" y="44" width="30" height="2.5" rx="1" fill="#ddd" opacity=".35"/>
+        <rect x="75" y="52" width="8" height="3" rx="1.5" fill="#E07A3A" opacity=".15"/><rect x="86" y="52" width="25" height="2.5" rx="1" fill="#ddd" opacity=".35"/>
+        <rect x="75" y="60" width="8" height="3" rx="1.5" fill="#E07A3A" opacity=".1"/><rect x="86" y="60" width="20" height="2.5" rx="1" fill="#ddd" opacity=".35"/>
+        <rect x="10" y="78" width="40" height="2" rx="1" fill="#ccc" opacity=".3"/>`
+    }
+  };
+  const v = cardVariants[asset.color] || cardVariants[1];
   card.innerHTML = `
-    <div class="asset-card-thumb color-${asset.color}">
+    <div class="asset-card-thumb branded-card-thumb">
       <svg viewBox="0 0 158 89" width="100%" height="100%" fill="none" preserveAspectRatio="xMidYMid meet">
-        <rect width="158" height="89" rx="2" fill="#f0f0f0"/>
-        <rect x="12" y="10" width="60" height="30" rx="2" fill="#ccc" opacity=".4"/>
-        <rect x="12" y="48" width="134" height="6" rx="2" fill="#ddd" opacity=".5"/>
-        <rect x="12" y="60" width="100" height="5" rx="2" fill="#ddd" opacity=".3"/>
-        <rect x="12" y="72" width="80" height="4" rx="2" fill="#ddd" opacity=".2"/>
+        ${v.svg}
       </svg>
     </div>
     <div class="asset-card-actions">

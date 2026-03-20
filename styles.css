@@ -496,6 +496,255 @@ body {
   color: #bbb;
 }
 
+/* ========== Branded Slide Styles ========== */
+.branded-slide {
+  background: linear-gradient(135deg, #fdf8f4 0%, #f8f0e8 100%);
+}
+
+.brand-bar-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #c45a20 0%, #E07A3A 50%, #f0a76e 100%);
+}
+
+.brand-shape {
+  position: absolute;
+  pointer-events: none;
+}
+
+.brand-shape-circle-lg {
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,122,58,.07) 0%, rgba(224,122,58,.02) 70%, transparent 100%);
+  right: -40px; top: -40px;
+}
+
+.brand-shape-circle-sm {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(224,122,58,.06);
+  right: 60px; bottom: 50px;
+}
+
+.brand-shape-rect {
+  width: 160px; height: 90px;
+  background: rgba(224,122,58,.03);
+  border-radius: 8px;
+  transform: rotate(-12deg);
+  right: -20px; bottom: -20px;
+}
+
+.brand-shape-accent {
+  width: 4px; height: 60px;
+  background: linear-gradient(180deg, #E07A3A 0%, transparent 100%);
+  left: 32px; top: 80px;
+  border-radius: 2px;
+  opacity: .5;
+}
+
+.slide-logo-branded {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 14%;
+}
+
+.slide-logo-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c45a20;
+  letter-spacing: .3px;
+}
+
+.branded-title {
+  color: #7a3510;
+  font-weight: 600;
+}
+
+.branded-subtitle {
+  color: #a0683e;
+}
+
+.slide-meta-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.slide-meta-tag {
+  font-size: 9px;
+  color: #c45a20;
+  background: rgba(224,122,58,.1);
+  padding: 2px 10px;
+  border-radius: 10px;
+  letter-spacing: .3px;
+  font-weight: 600;
+}
+
+.slide-body-text {
+  font-size: clamp(8px, 1vw, 12px);
+  color: #8a7060;
+  margin-top: 8px;
+  line-height: 1.5;
+  max-width: 70%;
+}
+
+.branded-date {
+  border: 1px solid #e0cfc0;
+  background: rgba(255,255,255,.6);
+}
+
+.footer-sep {
+  color: #bbb;
+}
+
+/* ========== Templafy Blue Slide Override ========== */
+.templafy-slide {
+  background: linear-gradient(135deg, #f4f5ff 0%, #eaedff 100%);
+}
+
+.templafy-slide .brand-bar-top {
+  background: linear-gradient(90deg, #3a4fd6 0%, #4A61ED 40%, #7b8ef5 100%);
+}
+
+.templafy-slide .brand-shape-circle-lg {
+  background: radial-gradient(circle, rgba(74,97,237,.19) 0%, rgba(74,97,237,.06) 70%, transparent 100%);
+}
+
+.templafy-slide .brand-shape-circle-sm {
+  background: rgba(74,97,237,.17);
+}
+
+.templafy-slide .brand-shape-rect {
+  background: rgba(74,97,237,.14);
+}
+
+.templafy-slide .brand-shape-accent {
+  background: linear-gradient(180deg, #4A61ED 0%, transparent 100%);
+}
+
+.templafy-slide .slide-logo-text {
+  color: #4A61ED;
+}
+
+.templafy-slide .branded-title {
+  color: #2a3580;
+}
+
+.templafy-slide .branded-subtitle {
+  color: #5a6ab0;
+}
+
+.templafy-slide .slide-meta-tag {
+  color: #4A61ED;
+  background: rgba(74,97,237,.1);
+}
+
+.templafy-slide .slide-body-text {
+  color: #6a75a0;
+}
+
+.templafy-slide .branded-date {
+  border-color: #c8cfe8;
+}
+
+/* ========== Branded Thumbnails ========== */
+.slide-thumb-content.branded-thumb {
+  background: linear-gradient(135deg, #fdf8f4, #f8f0e8);
+}
+
+.slide-thumb-content.branded-thumb::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c45a20, #E07A3A, #f0a76e);
+}
+
+.slide-thumb-content .mini-logo {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 2px;
+}
+
+.mini-logo-icon {
+  width: 8px; height: 8px;
+  background: #E07A3A;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.mini-logo-text {
+  font-size: 4px;
+  color: #c45a20;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.branded-thumb .mini-title {
+  color: #7a3510 !important;
+  font-weight: 700;
+}
+
+.branded-thumb .mini-sub {
+  color: #a0683e !important;
+}
+
+.branded-thumb .mini-body {
+  font-size: 4px;
+  color: #b09080;
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+.branded-thumb .mini-tags {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.branded-thumb .mini-tag {
+  font-size: 3.5px;
+  background: rgba(224,122,58,.1);
+  color: #c45a20;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.branded-thumb .thumb-shape-circle {
+  position: absolute;
+  right: -5px; top: -5px;
+  width: 35px; height: 35px;
+  border-radius: 50%;
+  background: rgba(224,122,58,.05);
+}
+
+.branded-thumb .thumb-shape-rect {
+  position: absolute;
+  right: -3px; bottom: -5px;
+  width: 30px; height: 20px;
+  background: rgba(224,122,58,.04);
+  border-radius: 3px;
+  transform: rotate(-12deg);
+}
+
+.branded-thumb .mini-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  margin-top: auto;
+  height: 16px;
+  padding-top: 4px;
+}
+
+.branded-thumb .mini-chart-bar {
+  width: 6px;
+  border-radius: 1px 1px 0 0;
+}
+
 /* Notes */
 .notes-bar {
   background: #fff;
@@ -1521,6 +1770,10 @@ body {
 .asset-card-thumb.color-4 { background: #f5e8ec; }
 .asset-card-thumb.color-5 { background: #ece8f5; }
 
+.branded-card-thumb {
+  background: #fdf6f0 !important;
+}
+
 .asset-card-name {
   font-size: 12px;
   color: #333;
@@ -1995,8 +2248,9 @@ body {
 }
 
 .onboarding-popover.version-B .onboarding-popover-step-dot.active {
-  background: rgba(149, 163, 244, 1);
-  outline-color: rgba(149, 163, 244, 0.4);
+  background: #4A61ED;
+  outline: 2px solid rgba(74, 97, 237, 0.5);
+  box-shadow: 0 0 8px rgba(74, 97, 237, 0.7);
 }
 
 .onboarding-popover.version-B .onboarding-popover-step-dot.done {
@@ -2013,9 +2267,9 @@ body {
 
 /* ========== Version B: subtle nav highlight ========== */
 .onboarding-highlight {
-  background: rgba(74, 97, 237, 0.08);
+  background: rgba(74, 97, 237, 0.18);
   border-radius: 4px;
-  box-shadow: 0 0 0 3px rgba(74, 97, 237, 0.08);
+  box-shadow: 0 0 0 4px rgba(74, 97, 237, 0.18);
   transition: background 300ms ease, box-shadow 300ms ease;
 }
 
@@ -2336,11 +2590,11 @@ body {
   max-width: 232px;
   border-top: 2px solid rgba(74, 97, 237, 0.7);
   box-shadow:
-    0px 0px 0px 1px rgba(74, 97, 237, 0.08),
-    0px 3px 6px rgba(41, 48, 56, 0.04),
-    0px 9px 18px rgba(41, 48, 56, 0.04),
-    inset 0 0 20px rgba(74, 97, 237, 0.06),
-    inset 0 8px 16px -8px rgba(74, 97, 237, 0.12);
+    0px 0px 0px 1px rgba(74, 97, 237, 0.15),
+    0px 2px 4px rgba(41, 48, 56, 0.08),
+    0px 6px 12px rgba(41, 48, 56, 0.06),
+    inset 0 0 12px rgba(74, 97, 237, 0.1),
+    inset 0 6px 10px -6px rgba(74, 97, 237, 0.18);
   display: flex;
   flex-direction: column;
   gap: 2px;

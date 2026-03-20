@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onboarding Version E (Light) – Sorting of Assets</title>
+  <title>Onboarding Version D – Sorting of Assets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="popover-light">
+<body>
   <div class="app">
 
     <!-- ===== Title Bar ===== -->
@@ -219,29 +219,32 @@
       <!-- Slide Editor (center) -->
       <div class="slide-editor">
         <div class="slide-canvas" id="slideCanvas">
-          <div class="slide-content">
-            <!-- Decorative geometric shapes -->
-            <div class="slide-deco deco-top-right">
-              <svg viewBox="0 0 200 200" width="200" height="200">
-                <circle cx="100" cy="100" r="80" fill="#e0e0e0" opacity=".3"/>
-                <rect x="60" y="60" width="80" height="80" fill="#d0d0d0" opacity=".3"/>
-              </svg>
-            </div>
-            <div class="slide-deco deco-bottom-right">
-              <svg viewBox="0 0 160 160" width="160" height="160">
-                <circle cx="80" cy="80" r="60" fill="#ccc" opacity=".25"/>
-                <rect x="30" y="30" width="100" height="100" rx="10" fill="#bbb" opacity=".2"/>
-              </svg>
-            </div>
+          <div class="slide-content branded-slide">
+            <!-- Branded decorative shapes -->
+            <div class="brand-shape brand-shape-circle-lg"></div>
+            <div class="brand-shape brand-shape-circle-sm"></div>
+            <div class="brand-shape brand-shape-rect"></div>
+            <div class="brand-shape brand-shape-accent"></div>
+            <div class="brand-bar-top"></div>
 
-            <div class="slide-logo"></div>
-            <h1 class="slide-title">Product Initiatives</h1>
-            <p class="slide-subtitle">Strategic roadmap and priorities</p>
+            <div class="slide-logo-branded">
+              <svg viewBox="0 0 28 28" width="28" height="28"><rect width="28" height="28" rx="6" fill="#E07A3A"/><text x="14" y="20" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" font-family="Segoe UI, sans-serif">C</text></svg>
+              <span class="slide-logo-text">Company</span>
+            </div>
+            <h1 class="slide-title branded-title">Product Initiatives</h1>
+            <p class="slide-subtitle branded-subtitle">Strategic roadmap and priorities for Q2 2026</p>
+            <div class="slide-meta-row">
+              <span class="slide-meta-tag">Strategy</span>
+              <span class="slide-meta-tag">Roadmap</span>
+              <span class="slide-meta-tag">Q2 2026</span>
+            </div>
+            <p class="slide-body-text">Aligning product vision with market opportunities and customer needs to drive sustainable growth.</p>
 
             <div class="slide-footer-area">
-              <div class="slide-date-field">
+              <div class="slide-date-field branded-date">
                 <span class="date-text">March 12, 2026</span>
-                <span class="footer-text">Footer</span>
+                <span class="footer-sep">|</span>
+                <span class="footer-text">Internal use only</span>
               </div>
             </div>
             <div class="slide-confidential">Confidential</div>
@@ -261,7 +264,7 @@
         <!-- Pane Header -->
         <div class="pane-header">
           <div class="pane-header-top">
-            <span class="pane-title" style="color: #888;">Company</span>
+            <span class="pane-title">Templafy</span>
             <div class="pane-header-right">
             </div>
           </div>
@@ -454,12 +457,7 @@
     <div class="onboarding-popover-dots" id="onboardingPopoverDotsRow"></div>
   </div>
 
-  <script>
-    window.ONBOARDING_VERSION = "E";
-    window.ONBOARDING_SKIP_FIRST_STEP = true;
-    window.ONBOARDING_AUTO_POPOVER_DELAY = 10000;
-    window.ONBOARDING_AUTO_POPOVER_HIDE = 2000;
-  </script>
+  <script>window.ONBOARDING_VERSION = "D";</script>
   <script src="app.js"></script>
 </body>
 </html>
